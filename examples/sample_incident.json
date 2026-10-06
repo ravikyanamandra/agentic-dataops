@@ -1,0 +1,9 @@
+{
+  "incident_id": "DEMO-001",
+  "pipeline_name": "daily_sales_reporting",
+  "platform": "Databricks",
+  "description": "The daily sales pipeline failed during its scheduled run. Sales dashboards still show yesterday's data.",
+  "error_message": "AnalysisException: Cannot resolve column 'net_sales' in the source dataset.",
+  "business_impact": "Regional teams cannot review the latest sales figures for their morning meeting.",
+  "reported_priority": "P2"
+}
