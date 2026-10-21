@@ -4,6 +4,8 @@ from src.schemas import Incident
 
 from src.triage import recommend_action
 
+from src.communications import draft_update
+
 
 def main():
     project_root = Path(__file__).resolve().parent.parent
@@ -18,7 +20,12 @@ def main():
     print(f"Pipeline: {incident.pipeline_name}")
     print(f"Priority: {incident.reported_priority}")
     print(f"Business impact: {incident.business_impact}")
-    print(f"Recommended action: {recommend_action(incident)}")
+
+    recommendation = recommend_action(incident)
+    print(f"Recommendsed action: {recommendation}")
+
+    print("\n--- Stakeholder update draft ---\n")
+    print(draft_update(incident, recommendation))
 
 
 if __name__ == "__main__":
